@@ -4943,3 +4943,137 @@ img.error::after {
 	max-height: 400px;
 	border-radius: 3px;
 }
+
+/* ============================================
+   ЧАТОР — Mobile Responsive Styles
+   ============================================ */
+
+/* Sidebar toggle button for mobile */
+#mobile-sidebar-toggle {
+	display: none;
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	z-index: 9999;
+	background: var(--primary-accent, #4b458c);
+	border: none;
+	border-radius: 8px;
+	padding: 8px 12px;
+	color: white;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+@media (max-width: 768px) {
+	#mobile-sidebar-toggle {
+		display: block;
+	}
+
+	/* Main layout: stack vertically on mobile */
+	#page {
+		flex-direction: column !important;
+	}
+
+	/* Server/guild list sidebar — hidden by default on mobile */
+	#serverList, .guildList, [class*="guildList"], [id*="guildlist"] {
+		position: fixed !important;
+		left: -100% !important;
+		top: 0 !important;
+		height: 100% !important;
+		z-index: 1000 !important;
+		transition: left 0.25s ease !important;
+		width: 80vw !important;
+		max-width: 320px !important;
+	}
+
+	#serverList.open, .guildList.open {
+		left: 0 !important;
+	}
+
+	/* Channel list */
+	.channelList, [class*="channelList"] {
+		position: fixed !important;
+		left: -100% !important;
+		top: 0 !important;
+		height: 100% !important;
+		z-index: 999 !important;
+		transition: left 0.25s ease !important;
+		width: 75vw !important;
+		max-width: 280px !important;
+	}
+
+	.channelList.open {
+		left: 0 !important;
+	}
+
+	/* Message input — full width, thumb-friendly */
+	.messageInput, [class*="messageInput"], textarea[class*="message"] {
+		font-size: 16px !important; /* Prevent iOS zoom */
+		padding: 12px !important;
+		border-radius: 12px !important;
+	}
+
+	/* Message area takes full width */
+	.messageArea, [class*="messageArea"], [id*="messageArea"] {
+		width: 100% !important;
+		margin: 0 !important;
+	}
+
+	/* Messages: larger touch targets */
+	.message, [class*="message-"] {
+		padding: 8px 12px !important;
+		min-height: 44px !important;
+	}
+
+	/* Member list — hidden on mobile */
+	.memberList, [class*="memberList"] {
+		display: none !important;
+	}
+
+	/* Avatars — slightly bigger for touch */
+	.pfp, [class*="avatar"] {
+		min-width: 36px !important;
+		min-height: 36px !important;
+	}
+
+	/* Buttons — bigger touch targets */
+	button {
+		min-height: 36px !important;
+	}
+
+	/* Context menus — full width on mobile */
+	.contextmenu, [class*="contextMenu"] {
+		min-width: 200px !important;
+		font-size: 15px !important;
+	}
+
+	/* Settings panel */
+	.settingsPage, [class*="settings"] {
+		width: 100% !important;
+		padding: 16px !important;
+	}
+
+	/* Overlay for sidebar */
+	.sidebar-overlay {
+		display: none;
+		position: fixed;
+		top: 0; left: 0;
+		width: 100%; height: 100%;
+		background: rgba(0,0,0,0.5);
+		z-index: 998;
+	}
+	.sidebar-overlay.visible {
+		display: block;
+	}
+}
+
+@media (max-width: 480px) {
+	/* Extra small phones */
+	body {
+		font-size: 14px !important;
+	}
+
+	.messageInput, [class*="messageInput"] {
+		font-size: 16px !important;
+	}
+}

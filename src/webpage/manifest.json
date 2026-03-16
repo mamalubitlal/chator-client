@@ -1,5 +1,5 @@
 {
-	"name": "Fermi",
+	"name": "Чатор",
 	"icons": [
 		{
 			"src": "/logo.webp",
@@ -9,9 +9,9 @@
 	"start_url": "/app",
 	"display": "standalone",
 	"scope": "/",
-	"theme_color": "#05050a",
+	"theme_color": "#0a0a2e",
 	"categories":["social"],
-	"description": "A lightweight chat app for all of your spacebar needs!",
-	"background_color": "#05050a",
+	"description": "Чатор — чат для своих.",
+	"background_color": "#0a0a2e",
 	"offline_enabled": true
 }
