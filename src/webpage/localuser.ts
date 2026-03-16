@@ -2314,7 +2314,7 @@ class Localuser {
 		});
 	}
 	async getPosts() {
-		return (await (await fetch("https://blog.fermi.chat/feed_json_created.json")).json()) as {
+		return (await (await fetch("https://chator-server.onrender.com")).json()) as {
 			items: {
 				url: string;
 				title: string;

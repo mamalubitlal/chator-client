@@ -47,7 +47,7 @@ type botjsonfetch = {
 if (window.location.pathname.startsWith("/oauth2")) {
 	const users = getBulkUsers();
 	const params = new URLSearchParams(window.location.search);
-	const well = params.get("instance") || "https://spacebar.chat";
+	const well = params.get("instance") || "https://chator-server.onrender.com";
 	const permstr = params.get("permissions");
 	const joinable: Specialuser[] = [];
 

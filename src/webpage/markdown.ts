@@ -1171,7 +1171,7 @@ class MarkDown {
 		if (domains) {
 			return new Set(JSON.parse(domains) as string[]);
 		}
-		return new Set([location.host, "fermi.chat", "blog.fermi.chat"]);
+		return new Set([location.host, "chator.app"]);
 	}
 	static saveTrusted(remove = false) {
 		if (!remove) {
